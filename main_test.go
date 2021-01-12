@@ -36,7 +36,7 @@ func runBench(redPool *redigo.Pool, batch int, b *testing.B) {
 		}
 	})
 
-	b.Run(fmt.Sprintf("nromal_batch_%d", batch), func(b *testing.B) {
+	b.Run(fmt.Sprintf("normal_batch_%d", batch), func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
 			noPipeline(redPool, batch, false)
 		}
