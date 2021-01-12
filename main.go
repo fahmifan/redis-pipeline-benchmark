@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"time"
@@ -69,6 +70,12 @@ func withPipeline(redPool *redigo.Pool, ndata int, debug bool) {
 		if debug {
 			fmt.Println(string(repl.([]byte)))
 		}
+
+		user := &User{}
+		err = json.Unmarshal(repl.([]byte), user)
+		if err != nil {
+			log.Fatal(err)
+		}
 	})
 }
 
@@ -82,7 +89,7 @@ func get(redPool *redigo.Pool, val int, debug bool) {
 	conn := redPool.Get()
 	defer conn.Close()
 
-	rep, err := conn.Do("GET", userCacheKeyByID(val))
+	repl, err := conn.Do("GET", userCacheKeyByID(val))
 	if err != nil {
 		if err == redigo.ErrNil {
 			return
@@ -91,7 +98,13 @@ func get(redPool *redigo.Pool, val int, debug bool) {
 	}
 
 	if debug {
-		fmt.Println(string(rep.([]byte)))
+		fmt.Println(string(repl.([]byte)))
+	}
+
+	user := &User{}
+	err = json.Unmarshal(repl.([]byte), user)
+	if err != nil {
+		log.Fatal(err)
 	}
 }
 

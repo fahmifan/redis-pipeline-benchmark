@@ -26,21 +26,21 @@ MacBook Pro (13-inch, 2018)
 
 goos: darwin
 goarch: amd64
-pkg: multi
-Benchmark_LocalRedis/pipes__batch_10-8         	   13137	     90425 ns/op
-Benchmark_LocalRedis/nromal_batch_10-8         	    1527	    768959 ns/op
-Benchmark_LocalRedis/pipes__batch_100-8        	    5582	    214503 ns/op
-Benchmark_LocalRedis/nromal_batch_100-8        	     153	   9118685 ns/op
-Benchmark_LocalRedis/pipes__batch_1000-8       	    1072	   1105205 ns/op
-Benchmark_LocalRedis/nromal_batch_1000-8       	      14	  77131195 ns/op
-Benchmark__MiniRedis/pipes__batch_10-8         	   10000	    107797 ns/op
-Benchmark__MiniRedis/nromal_batch_10-8         	    2055	    581219 ns/op
-Benchmark__MiniRedis/pipes__batch_100-8        	    1856	    666225 ns/op
-Benchmark__MiniRedis/nromal_batch_100-8        	     205	   5808381 ns/op
-Benchmark__MiniRedis/pipes__batch_1000-8       	     148	   7758606 ns/op
-Benchmark__MiniRedis/nromal_batch_1000-8       	      19	  58389439 ns/op
+pkg: github.com/fahmifan/redis-pipeline-benchmark
+Benchmark_LocalRedis/pipes__batch_10-8         	    8773	    116976 ns/op
+Benchmark_LocalRedis/nromal_batch_10-8         	    1332	   1150114 ns/op
+Benchmark_LocalRedis/pipes__batch_100-8        	    3388	    360788 ns/op
+Benchmark_LocalRedis/nromal_batch_100-8        	     135	   9446956 ns/op
+Benchmark_LocalRedis/pipes__batch_1000-8       	     662	   1876936 ns/op
+Benchmark_LocalRedis/nromal_batch_1000-8       	      13	  89030635 ns/op
+Benchmark__MiniRedis/pipes__batch_10-8         	   10000	    121230 ns/op
+Benchmark__MiniRedis/nromal_batch_10-8         	    2044	    602280 ns/op
+Benchmark__MiniRedis/pipes__batch_100-8        	    1404	    830698 ns/op
+Benchmark__MiniRedis/nromal_batch_100-8        	     200	   6156052 ns/op
+Benchmark__MiniRedis/pipes__batch_1000-8       	     142	   8044406 ns/op
+Benchmark__MiniRedis/nromal_batch_1000-8       	      19	  59559810 ns/op
 PASS
-ok  	multi	18.587s
+ok  	github.com/fahmifan/redis-pipeline-benchmark	18.872s
 ```
 
 ```
