@@ -44,7 +44,7 @@ ok  	multi	18.587s
 ```
 
 ```
-# benchstat bench.out
+# benchstat bench.txt
 
 name                             time/op
 _LocalRedis/pipes__batch_10-8     105µs ± 7%
