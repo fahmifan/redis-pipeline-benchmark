@@ -1,4 +1,4 @@
-module multi
+module github.com/fahmifan/redis-pipeline-benchmark
 
 go 1.14
 
